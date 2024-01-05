@@ -3,6 +3,6 @@ Content-Type: application/json
 
 {
     "email": "k2289@byu.edu",
-    "password": "Taeyang1",
+    "password": "Taeyang1"
 }
 

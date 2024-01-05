@@ -74,7 +74,7 @@ server.post('/signup', (req, res) => {
   }
 
   bcrypt.hash(password, 10, async (err, hashed_password) => {
-    let username = await generateUsername();
+    let username = await generateUsername(email);
 
     let user = new User({
       personal_info: { fullname, email, password: hashed_password, username },
@@ -95,7 +95,7 @@ server.post('/signup', (req, res) => {
   });
 });
 
-server.post('signin', (req, res) => {
+server.post('/signin', (req, res) => {
   let { email, password } = req.body;
 
   // Fine one is a MongoDB function to find the document
